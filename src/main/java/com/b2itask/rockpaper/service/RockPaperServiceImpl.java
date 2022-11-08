@@ -27,6 +27,9 @@ public class RockPaperServiceImpl implements RockPaperService {
 	}
 
 	public RockPaperResponse getComputerResponse(String gesture, Optional<Boolean> rules) {
+		if (gesture == null) {
+			return null;
+		}
 		String lowerGesture = gesture.toLowerCase();
 		if (!lowerGesture.equals("scissor") &&
 			!lowerGesture.equals("rock") &&
